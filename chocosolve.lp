@@ -20,11 +20,8 @@ compose(vert).
 compose(rouge).
 compose(blanc).
 
-% Il y a au moins un coupable
-1 { coupable(Animal) }
-
 % Le coupable est un des suspects
-coupable(Animal) :- suspect(Animal).
+suspect(Animal) :- coupable(Animal).
 
 % Le coupable a mangé des choconours, il a donc ingeré de la savourine
 coupable(Animal) :- mange(Animal, savourine).
@@ -40,18 +37,18 @@ mange(Animal, savourine) :- haleine(Animal, bleu), haleine(Animal, vert), halein
 haleine(chat, bleu).
 haleine(chat, jaune).
 haleine(chat, vert).
-%not haleine(chat, rouge).
-%not haleine(chat, blanc).
+not haleine(chat, rouge).
+not haleine(chat, blanc).
 haleine(chien, bleu).
 haleine(chien, vert).
 haleine(chien, rouge).
 haleine(chien, blanc).
-%not haleine(chien, jaune).
+not haleine(chien, jaune).
 haleine(loup, bleu).
 haleine(loup, jaune).
 haleine(loup, rouge).
 haleine(loup, blanc).
-%not haleine(loup, vert).
+not haleine(loup, vert).
 haleine(ours, bleu).
 haleine(ours, jaune).
 haleine(ours, vert).
